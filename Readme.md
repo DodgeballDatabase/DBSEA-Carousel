@@ -2,6 +2,8 @@
 
 Work around the lack of a cover that can link in Wordpress and maintain consistency when using an image alone and with overlay, filters, and text.
 
+You can preview the slides at this link: https://html-preview.github.io/?url=https://github.com/DodgeballDatabase/DBSEA-Carousel/blob/main/flat_preview.html
+
 Documentation is minimal but can be expanded as needed.
 
 ## Usage
@@ -9,3 +11,4 @@ Specify instance parameters for your slide, add it to the list of slides to gene
 
 ## Testing
 This tool also generates an html page with all slides stacked vertically to test that everything looks as expected without needing access to wordpress.
+

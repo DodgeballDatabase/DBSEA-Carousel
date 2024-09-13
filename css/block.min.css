@@ -56,7 +56,7 @@
     text-decoration:none
 }
 
-.wp-block-button[style * =text-decoration] .wp-block-button__link {
+.wp-block-button[style*=text-decoration] .wp-block-button__link {
     text-decoration:inherit
 }
 
@@ -174,7 +174,7 @@
     width:100%
 }
 
-.wp-block-buttons[style * =text-decoration] .wp-block-button, .wp-block-buttons[style * =text-decoration] .wp-block-button__link {
+.wp-block-buttons[style*=text-decoration] .wp-block-button, .wp-block-buttons[style*=text-decoration] .wp-block-button__link {
     text-decoration:inherit
 }
 
@@ -288,7 +288,7 @@
         flex-grow:1
     }
 
-    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column[style * =flex-basis] {
+    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column[style*=flex-basis] {
         flex-grow:0
     }
 }
@@ -302,7 +302,7 @@
     flex-grow:1
 }
 
-.wp-block-columns.is-not-stacked-on-mobile > .wp-block-column[style * =flex-basis] {
+.wp-block-columns.is-not-stacked-on-mobile > .wp-block-column[style*=flex-basis] {
     flex-grow:0
 }
 
@@ -546,7 +546,7 @@
     position:relative
 }
 
-.wp-block-cover .has-background-dim:not([class * =-background-color]), .wp-block-cover-image .has-background-dim:not([class * =-background-color]), .wp-block-cover-image.has-background-dim:not([class * =-background-color]), .wp-block-cover.has-background-dim:not([class * =-background-color]) {
+.wp-block-cover .has-background-dim:not([class*=-background-color]), .wp-block-cover-image .has-background-dim:not([class*=-background-color]), .wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]) {
     background-color:#000
 }
 
@@ -638,7 +638,7 @@
 }
 
 .wp-block-cover .wp-block-cover__background.has-background-dim.has-background-dim-70, .wp-block-cover .wp-block-cover__gradient-background.has-background-dim.has-background-dim-70, .wp-block-cover-image .wp-block-cover__background.has-background-dim.has-background-dim-70, .wp-block-cover-image .wp-block-cover__gradient-background.has-background-dim.has-background-dim-70 {
-    opacity: 0;
+    opacity:.7
 }
 
 .wp-block-cover .wp-block-cover__background.has-background-dim.has-background-dim-80, .wp-block-cover .wp-block-cover__gradient-background.has-background-dim.has-background-dim-80, .wp-block-cover-image .wp-block-cover__background.has-background-dim.has-background-dim-80, .wp-block-cover-image .wp-block-cover__gradient-background.has-background-dim.has-background-dim-80 {
@@ -1302,7 +1302,7 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
     padding:1.25em 2.375em
 }
 
-h1.has-text-align-left[style * =writing-mode]:where([style * =vertical-lr]), h1.has-text-align-right[style * =writing-mode]:where([style * =vertical-rl]), h2.has-text-align-left[style * =writing-mode]:where([style * =vertical-lr]), h2.has-text-align-right[style * =writing-mode]:where([style * =vertical-rl]), h3.has-text-align-left[style * =writing-mode]:where([style * =vertical-lr]), h3.has-text-align-right[style * =writing-mode]:where([style * =vertical-rl]), h4.has-text-align-left[style * =writing-mode]:where([style * =vertical-lr]), h4.has-text-align-right[style * =writing-mode]:where([style * =vertical-rl]), h5.has-text-align-left[style * =writing-mode]:where([style * =vertical-lr]), h5.has-text-align-right[style * =writing-mode]:where([style * =vertical-rl]), h6.has-text-align-left[style * =writing-mode]:where([style * =vertical-lr]), h6.has-text-align-right[style * =writing-mode]:where([style * =vertical-rl]) {
+h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]), h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]), h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]), h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]), h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]), h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]), h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]), h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]), h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]), h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]), h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]), h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]) {
     rotate:180deg
 }
 
@@ -1313,7 +1313,7 @@ h1.has-text-align-left[style * =writing-mode]:where([style * =vertical-lr]), h1.
     vertical-align:bottom
 }
 
-.wp-block-image[style * =border-radius] img, .wp-block-image[style * =border-radius] > a {
+.wp-block-image[style*=border-radius] img, .wp-block-image[style*=border-radius] > a {
     border-radius:inherit
 }
 
@@ -1635,15 +1635,15 @@ ol.wp-block-latest-comments {
     margin-left:0
 }
 
-:where(.wp-block-latest-comments:not([style * =line-height] .wp-block-latest-comments__comment)) {
+:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment)) {
     line-height:1.1
 }
 
-:where(.wp-block-latest-comments:not([style * =line-height] .wp-block-latest-comments__comment-excerpt p)) {
+:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment-excerpt p)) {
     line-height:1.8
 }
 
-.has-dates :where(.wp-block-latest-comments:not([style * =line-height])), .has-excerpts :where(.wp-block-latest-comments:not([style * =line-height])) {
+.has-dates :where(.wp-block-latest-comments:not([style*=line-height])), .has-excerpts :where(.wp-block-latest-comments:not([style*=line-height])) {
     line-height:1.5
 }
 
@@ -1684,7 +1684,7 @@ ol.wp-block-latest-comments {
     width:2.5em
 }
 
-.wp-block-latest-comments[class * =-font-size] a, .wp-block-latest-comments[style * =font-size] a {
+.wp-block-latest-comments[class*=-font-size] a, .wp-block-latest-comments[style*=font-size] a {
     font-size:inherit
 }
 
@@ -2508,7 +2508,7 @@ p.has-drop-cap.has-background {
     color: inherit
 }
 
-p.has-text-align-left[style * ="writing-mode:vertical-lr"], p.has-text-align-right[style * ="writing-mode:vertical-rl"] {
+p.has-text-align-left[style*="writing-mode:vertical-lr"], p.has-text-align-right[style*="writing-mode:vertical-rl"] {
     rotate:180deg
 }
 
@@ -2556,27 +2556,27 @@ p.has-text-align-left[style * ="writing-mode:vertical-lr"], p.has-text-align-rig
     box-sizing:border-box
 }
 
-.wp-block-post-comments-form[style * =font-weight] :where(.comment-reply-title) {
+.wp-block-post-comments-form[style*=font-weight] :where(.comment-reply-title) {
     font-weight:inherit
 }
 
-.wp-block-post-comments-form[style * =font-family] :where(.comment-reply-title) {
+.wp-block-post-comments-form[style*=font-family] :where(.comment-reply-title) {
     font-family:inherit
 }
 
-.wp-block-post-comments-form[class * =-font-size] :where(.comment-reply-title), .wp-block-post-comments-form[style * =font-size] :where(.comment-reply-title) {
+.wp-block-post-comments-form[class*=-font-size] :where(.comment-reply-title), .wp-block-post-comments-form[style*=font-size] :where(.comment-reply-title) {
     font-size:inherit
 }
 
-.wp-block-post-comments-form[style * =line-height] :where(.comment-reply-title) {
+.wp-block-post-comments-form[style*=line-height] :where(.comment-reply-title) {
     line-height:inherit
 }
 
-.wp-block-post-comments-form[style * =font-style] :where(.comment-reply-title) {
+.wp-block-post-comments-form[style*=font-style] :where(.comment-reply-title) {
     font-style:inherit
 }
 
-.wp-block-post-comments-form[style * =letter-spacing] :where(.comment-reply-title) {
+.wp-block-post-comments-form[style*=letter-spacing] :where(.comment-reply-title) {
     letter-spacing:inherit
 }
 
@@ -2742,7 +2742,7 @@ p.has-text-align-left[style * ="writing-mode:vertical-lr"], p.has-text-align-rig
     transform: scaleX(1)
 }
 
-.wp-block-post-navigation-link.has-text-align-left[style * ="writing-mode: vertical-lr"], .wp-block-post-navigation-link.has-text-align-right[style * ="writing-mode: vertical-rl"] {
+.wp-block-post-navigation-link.has-text-align-left[style*="writing-mode: vertical-lr"], .wp-block-post-navigation-link.has-text-align-right[style*="writing-mode: vertical-rl"] {
     rotate:180deg
 }
 
@@ -2982,11 +2982,11 @@ p.has-text-align-left[style * ="writing-mode:vertical-lr"], p.has-text-align-rig
     width:fit-content
 }
 
-.wp-block-read-more:where(:not([style * =text-decoration])) {
+.wp-block-read-more:where(:not([style*=text-decoration])) {
     text-decoration:none
 }
 
-.wp-block-read-more:where(:not([style * =text-decoration])):active, .wp-block-read-more:where(:not([style * =text-decoration])):focus {
+.wp-block-read-more:where(:not([style*=text-decoration])):active, .wp-block-read-more:where(:not([style*=text-decoration])):focus {
     text-decoration:none
 }
 
@@ -3882,35 +3882,35 @@ ul.wp-block-rss.is-grid li {
     border-color:inherit
 }
 
-.wp-block-table table[style * =border-top-color] tr:first-child, .wp-block-table table[style * =border-top-color] tr:first-child td, .wp-block-table table[style * =border-top-color] tr:first-child th, .wp-block-table table[style * =border-top-color] > *, .wp-block-table table[style * =border-top-color] > * td, .wp-block-table table[style * =border-top-color] > * th {
+.wp-block-table table[style*=border-top-color] tr:first-child, .wp-block-table table[style*=border-top-color] tr:first-child td, .wp-block-table table[style*=border-top-color] tr:first-child th, .wp-block-table table[style*=border-top-color] > *, .wp-block-table table[style*=border-top-color] > * td, .wp-block-table table[style*=border-top-color] > * th {
     border-top-color:inherit
 }
 
-.wp-block-table table[style * =border-top-color] tr:not(:first-child) {
+.wp-block-table table[style*=border-top-color] tr:not(:first-child) {
     border-top-color:initial
 }
 
-.wp-block-table table[style * =border-right-color] td:last-child, .wp-block-table table[style * =border-right-color] th, .wp-block-table table[style * =border-right-color] tr, .wp-block-table table[style * =border-right-color] > * {
+.wp-block-table table[style*=border-right-color] td:last-child, .wp-block-table table[style*=border-right-color] th, .wp-block-table table[style*=border-right-color] tr, .wp-block-table table[style*=border-right-color] > * {
     border-right-color:inherit
 }
 
-.wp-block-table table[style * =border-bottom-color] tr:last-child, .wp-block-table table[style * =border-bottom-color] tr:last-child td, .wp-block-table table[style * =border-bottom-color] tr:last-child th, .wp-block-table table[style * =border-bottom-color] > *, .wp-block-table table[style * =border-bottom-color] > * td, .wp-block-table table[style * =border-bottom-color] > * th {
+.wp-block-table table[style*=border-bottom-color] tr:last-child, .wp-block-table table[style*=border-bottom-color] tr:last-child td, .wp-block-table table[style*=border-bottom-color] tr:last-child th, .wp-block-table table[style*=border-bottom-color] > *, .wp-block-table table[style*=border-bottom-color] > * td, .wp-block-table table[style*=border-bottom-color] > * th {
     border-bottom-color:inherit
 }
 
-.wp-block-table table[style * =border-bottom-color] tr:not(:last-child) {
+.wp-block-table table[style*=border-bottom-color] tr:not(:last-child) {
     border-bottom-color:initial
 }
 
-.wp-block-table table[style * =border-left-color] td:first-child, .wp-block-table table[style * =border-left-color] th, .wp-block-table table[style * =border-left-color] tr, .wp-block-table table[style * =border-left-color] > * {
+.wp-block-table table[style*=border-left-color] td:first-child, .wp-block-table table[style*=border-left-color] th, .wp-block-table table[style*=border-left-color] tr, .wp-block-table table[style*=border-left-color] > * {
     border-left-color:inherit
 }
 
-.wp-block-table table[style * =border-style] td, .wp-block-table table[style * =border-style] th, .wp-block-table table[style * =border-style] tr, .wp-block-table table[style * =border-style] > * {
+.wp-block-table table[style*=border-style] td, .wp-block-table table[style*=border-style] th, .wp-block-table table[style*=border-style] tr, .wp-block-table table[style*=border-style] > * {
     border-style:inherit
 }
 
-.wp-block-table table[style * =border-width] td, .wp-block-table table[style * =border-width] th, .wp-block-table table[style * =border-width] tr, .wp-block-table table[style * =border-width] > * {
+.wp-block-table table[style*=border-width] td, .wp-block-table table[style*=border-width] th, .wp-block-table table[style*=border-width] tr, .wp-block-table table[style*=border-width] > * {
     border-style: inherit;
     border-width:inherit
 }
@@ -4145,43 +4145,43 @@ html :where(.has-border-color) {
     border-style:solid
 }
 
-html :where([style * =border-top-color]) {
+html :where([style*=border-top-color]) {
     border-top-style:solid
 }
 
-html :where([style * =border-right-color]) {
+html :where([style*=border-right-color]) {
     border-right-style:solid
 }
 
-html :where([style * =border-bottom-color]) {
+html :where([style*=border-bottom-color]) {
     border-bottom-style:solid
 }
 
-html :where([style * =border-left-color]) {
+html :where([style*=border-left-color]) {
     border-left-style:solid
 }
 
-html :where([style * =border-width]) {
+html :where([style*=border-width]) {
     border-style:solid
 }
 
-html :where([style * =border-top-width]) {
+html :where([style*=border-top-width]) {
     border-top-style:solid
 }
 
-html :where([style * =border-right-width]) {
+html :where([style*=border-right-width]) {
     border-right-style:solid
 }
 
-html :where([style * =border-bottom-width]) {
+html :where([style*=border-bottom-width]) {
     border-bottom-style:solid
 }
 
-html :where([style * =border-left-width]) {
+html :where([style*=border-left-width]) {
     border-left-style:solid
 }
 
-html :where(img[class * =wp-image-]) {
+html :where(img[class*=wp-image-]) {
     height: auto;
     max-width:100%
 }
