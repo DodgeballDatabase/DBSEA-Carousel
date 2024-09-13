@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+print_to_console = True
+
 amber_filter = "has-luminous-vivid-amber-background-color"
 amber_top_line = "#ff6900"
 amber_duotone = "wp-duotone-cf2e2e-fcb900-1"
@@ -33,6 +35,7 @@ class Instance:
     top_line_background_color: str
     duotone: str
     object_position: str
+    dim: int = 0 # 0-100: 0 is fully transparent, 100 is fully opaque, increments of 10
 
 def get_social_league_instance():
     top_line = "Fall Social League"
@@ -50,7 +53,9 @@ def get_social_league_instance():
 
     object_position = "object-position:44% 0%"
 
-    return Instance(top_line, mid_line, bot_line, link, img_src, wp_image_num, text_color_class, background_color, top_line_background_color, duotone, object_position)
+    dim = 70
+
+    return Instance(top_line, mid_line, bot_line, link, img_src, wp_image_num, text_color_class, background_color, top_line_background_color, duotone, object_position, dim)
 
 def get_rainbow_league_instance():
     top_line = "Fall Rainbow League"
@@ -68,7 +73,9 @@ def get_rainbow_league_instance():
 
     object_position = ""
 
-    return Instance(top_line, mid_line, bot_line, link, img_src, wp_image_num, text_color_class, background_color, top_line_background_color, duotone, object_position)
+    dim = 40
+
+    return Instance(top_line, mid_line, bot_line, link, img_src, wp_image_num, text_color_class, background_color, top_line_background_color, duotone, object_position, dim)
 
 def get_squid_instance():
     top_line = ""
@@ -88,7 +95,7 @@ def get_squid_instance():
 
     return Instance(top_line, mid_line, bot_line, link, img_src, wp_image_num, text_color_class, background_color, top_line_background_color, duotone, object_position)
 
-def generate(slide_instance: Instance, name: str):
+def generate(slide_instance: Instance, name: str) -> str:
 
     tl_bg_color = ""
     if slide_instance.top_line_background_color != "":
@@ -96,30 +103,46 @@ def generate(slide_instance: Instance, name: str):
 
     bg_color = ""
     if slide_instance.background_color != "":
-        bg_color = f"{slide_instance.background_color} has-background-dim-70 has-background-dim"
+        bg_color = f"{slide_instance.background_color}"
 
-    text = f"""<div class="wp-block-cover aligncenter is-light is-style-editorskit-rounded ek-linked-block {slide_instance.duotone}" style="min-height:350px;aspect-ratio:unset;">
-    <span aria-hidden="true" class="wp-block-cover__background {bg_color}">
-    </span>
-    <img decoding="async" class="wp-block-cover__image-background {slide_instance.wp_image_num} ls-is-cached lazyloaded" alt="" src="{slide_instance.img_src}" data-src="{slide_instance.img_src}" style="{slide_instance.object_position}" data-object-fit="cover" data-object-position="{slide_instance.object_position}">
-        <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
-            <p class="has-text-align-center has-large-font-size {slide_instance.text_color_class} has-text-color">
-                <strong>
-                    <span style="{tl_bg_color}" class="has-inline-background">{slide_instance.top_line}</span>
-                </strong>
-                <br/>
-                {slide_instance.mid_line}
-                <br/>
-                {slide_instance.bot_line}
-            </p>
+    if slide_instance.dim > 0:
+        bg_color += f" has-background-dim-{slide_instance.dim} has-background"
+
+    text = f"""
+        <div class="wp-block-cover aligncenter is-light is-style-editorskit-rounded ek-linked-block {slide_instance.duotone}" style="min-height:350px;aspect-ratio:unset;">
+            <span aria-hidden="true" class="wp-block-cover__background {bg_color}"></span>
+            <img decoding="async" class="wp-block-cover__image-background {slide_instance.wp_image_num} ls-is-cached lazyloaded" alt="" src="{slide_instance.img_src}" data-src="{slide_instance.img_src}" style="{slide_instance.object_position}" data-object-fit="cover" data-object-position="{slide_instance.object_position}">
+            <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
+                <p class="has-text-align-center has-large-font-size {slide_instance.text_color_class} has-text-color">
+                    <strong>
+                        <span style="{tl_bg_color}" class="has-inline-background">{slide_instance.top_line}</span>
+                    </strong>
+                    <br/>
+                    {slide_instance.mid_line}
+                    <br/>
+                    {slide_instance.bot_line}
+                </p>
+            </div>
+            <a href="{slide_instance.link}" class="editorskit-block-link" rel=""></a>
         </div>
-        <a href="{slide_instance.link}" class="editorskit-block-link" rel=""></a>
-    </div>"""
-    print()
-    print(name)
-    print("=====================================")
-    print(text)
+"""
 
-generate(get_squid_instance(), "Squid 2024")
-generate(get_social_league_instance(), "Social League")
-generate(get_rainbow_league_instance(), "Rainbow League")
+    if print_to_console:
+        print()
+        print(name)
+        print("=====================================")
+        print(text)
+    return text
+
+def write_to_file(slide_str: str):
+    with open('template.html', 'r') as template:
+        template_text = template.read()
+        with open('flat_preview.html', 'w+') as out_file:
+            out_file.write(template_text.replace("{SLIDES}", slide_str))
+
+slides = ""
+slides += generate(get_squid_instance(), "Squid 2024")
+slides += generate(get_social_league_instance(), "Social League")
+slides += generate(get_rainbow_league_instance(), "Rainbow League")
+
+write_to_file(slides)

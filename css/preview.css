@@ -1,0 +1,8 @@
+.dbsea-preview {
+    max-width: 960px;
+}
+
+.dbsea-preview > div {
+    margin-top: 20px;
+    margin-left: 20px
+}
